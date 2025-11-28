@@ -32,11 +32,11 @@ Repositori ini berisi perjalanan belajar berbagai bidang dalam Teknologi Informa
 Explore-Tech-Path/
 ├── README.md                     # File ini / This file
 ├── ai-ml/                        # Currently active: AI & Machine Learning
-├── upcoming-domains/             # Placeholder for future domains
-│   ├── blockchain/               # Planning phase
-│   ├── cyber-sec/                # Planning phase
-│   ├── pemrograman/              # Planning phase
-│   └── web-dev/                  # Planning phase
+├── upcoming-domains/             # Inactive domains, planned for future
+│   ├── blockchain/               # Placeholder
+│   ├── cyber-sec/                # Placeholder
+│   ├── pemrograman/              # Placeholder
+│   └── web-dev/                  # Placeholder
 ```
 
 ### Domain Aktif Saat Ini:

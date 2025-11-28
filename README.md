@@ -1,6 +1,6 @@
 # Explore Tech Path
 
-[![Progress](https://img.shields.io/badge/Progress-15%25-yellow)](https://shields.io/)
+[![Progress](https://img.shields.io/badge/Progress-25%25-brightgreen)](https://shields.io/)
 [![GitHub stars](https://img.shields.io/github/stars/rafsamjani/explore-tech-path.svg)](https://github.com/rafsamjani/explore-tech-path/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/rafsamjani/explore-tech-path.svg)](https://github.com/rafsamjani/explore-tech-path/network)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -8,7 +8,7 @@
 > **Belajar berbagai bidang IT dari dasar hingga mahir** / *Learning various IT fields from basic to advanced*
 
 <div align="center">
-  <p>Repositori ini adalah dokumentasi perjalanan belajar IT saya, mencakup berbagai domain teknologi</p>
+  <p>Repositori ini adalah dokumentasi perjalanan belajar IT saya, saat ini fokus pada AI/ML</p>
 </div>
 
 ## 📚 Table of Contents
@@ -22,49 +22,35 @@
 
 ## Deskripsi / Description
 
-Repositori ini berisi perjalanan belajar berbagai bidang dalam Teknologi Informasi (IT). Mulai dari dasar pemrograman, AI/ML, keamanan siber, hingga teknologi blockchain. Cocok untuk pemula yang ingin belajar sambil eksplorasi konsep IT secara mendalam.
+Repositori ini berisi perjalanan belajar berbagai bidang dalam Teknologi Informasi (IT). Saat ini fokus utama saya adalah pada Artificial Intelligence & Machine Learning, dengan rencana untuk menambahkan domain lain secara bertahap seiring perkembangan belajar saya.
 
-*This repository contains an IT learning journey covering various technology domains. Perfect for beginners who want to learn while exploring IT concepts deeply.*
+*This repository contains my IT learning journey, currently focusing on AI/ML with plans to add more domains incrementally as I progress.*
 
 ## Struktur Folder / Folder Structure
 
 ```
 Explore-Tech-Path/
 ├── README.md                     # File ini / This file
-├── ai-ml/                        # Artificial Intelligence & Machine Learning
-├── blockchain/                   # Blockchain technology, crypto, smart contracts
-├── cyber-sec/                    # Cyber security, network security, ethical hacking
-├── pemrograman/                  # Programming fundamentals, algorithms, languages
-├── web-dev/                      # Web development, frontend & backend
+├── ai-ml/                        # Currently active: AI & Machine Learning
+├── upcoming-domains/             # Placeholder for future domains
+│   ├── blockchain/               # Planning phase
+│   ├── cyber-sec/                # Planning phase
+│   ├── pemrograman/              # Planning phase
+│   └── web-dev/                  # Planning phase
 ```
 
-### Detail Masing-Masing Domain:
+### Domain Aktif Saat Ini:
 
 - **ai-ml/**: Materi tentang kecerdasan buatan dan machine learning dari matematika dasar hingga implementasi
   - *Status: ✏️ In Progress* | *Progress: 25%*
   - Subfolder: 01-Notes (Aljabar Linear, Kalkulus, Peluang), 02-Projects, 03-Machine-Learning, 04-Deep-Learning, 05-Computer-Vision, 06-NLP
+
+### Domain Mendatang (Dalam Perencanaan):
+
 - **blockchain/**: Belajar blockchain, kriptografi, smart contracts, dan cryptocurrency
-  - *Status: 📚 Not Started* | *Progress: 5%*
-  - Subfolder: 01-pengantar-blockchain, 02-kriptografi-dasar, 03-smart-contracts, 04-cryptocurrency, 05-decentralized-applications
 - **cyber-sec/**: Konsep keamanan siber, network security, ethical hacking, dan incident response
-  - *Status: 📚 Not Started* | *Progress: 5%*
-  - Subfolder: 01-pengantar-cyber-security, 02-jaringan-aman, 03-kriptografi, 04-ethical-hacking, 05-incident-response
 - **pemrograman/**: Konsep dasar pemrograman, bahasa, algoritma, dan paradigma
-  - *Status: 📚 In Progress* | *Progress: 30%*
-  - Subfolder: 01-pengantar-pemrograman, 02-bahasa-pemrograman-dasar, 03-konsep-pemrograman, 04-algoritma-dan-struktur-data, 05-paradigma-pemrograman
 - **web-dev/**: Pengembangan web dari HTML/CSS hingga framework modern
-  - *Status: 📚 In Progress* | *Progress: 10%*
-  - Subfolder: 01-html-css, 02-javascript, 03-backend, 04-frontend-frameworks, 05-backend-frameworks, 06-golang
-
-## Progress Tracker
-
-| Domain / Subject | Status | Progress | Keterangan / Notes |
-|------------------|--------|----------|-------------------|
-| AI/ML | ✏️ | 25% | Matematika dasar, supervised learning, deep learning basics |
-| Pemrograman | 📚 | 30% | Pengantar, bahasa, algoritma dan struktur data |
-| Web Development | 📚 | 10% | HTML, CSS basics |
-| Cyber Security | 📚 | 5% | Pengantar dan konsep dasar |
-| Blockchain | 📚 | 5% | Pengantar dan kriptografi dasar |
 
 > Keterangan / Legend: 📚 Belum (Not Started) | ✏️ Sedang (In Progress) | ✅ Selesai (Completed)
 
@@ -123,31 +109,6 @@ Meskipun ini adalah proyek pembelajaran pribadiku, kontribusi tetap dipersilakan
 - Sumber belajar tambahan
 - Kode yang lebih efisien atau bersih
 
-## 📁 Struktur Subfolder Lengkap
-
-### ai-ml/
-- 01 - Notes: Aljabar Linear, Kalkulus, Peluang
-- 02 - Projects: Proyek-proyek pembelajaran
-- 03 - Machine Learning: Supervised & Unsupervised Learning
-- 04 - Deep Learning: Neural Networks, CNN, RNN, Transformers
-- 05 - Computer Vision: Pengolahan citra dan visi komputer
-- 06 - NLP: Pemrosesan bahasa alami
-
-### pemrograman/
-- 01 - pengantar-pemrograman
-- 02 - bahasa-pemrograman-dasar: JavaScript, Python
-- 03 - konsep-pemrograman
-- 04 - algoritma-dan-struktur-data:
-  - algoritma: Pengantar, Analisis Kompleksitas, Struktur Data, DLL
-- 05 - paradigma-pemrograman
-
-### web-dev/
-- 01 - html-css
-- 02 - javascript
-- 03 - backend: Laravel
-- 04 - frontend-frameworks: Next.js
-- 05 - backend-frameworks
-- 06 - golang
 
 ## Lisensi / License
 

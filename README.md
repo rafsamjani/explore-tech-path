@@ -1,6 +1,6 @@
 # Explore Tech Path
 
-[![Progress](https://img.shields.io/badge/Progress-25%25-brightgreen)](https://shields.io/)
+[![Progress](https://img.shields.io/badge/Progress-15%25-yellow)](https://shields.io/)
 [![GitHub stars](https://img.shields.io/github/stars/rafsamjani/explore-tech-path.svg)](https://github.com/rafsamjani/explore-tech-path/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/rafsamjani/explore-tech-path.svg)](https://github.com/rafsamjani/explore-tech-path/network)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -41,19 +41,29 @@ Explore-Tech-Path/
 ### Detail Masing-Masing Domain:
 
 - **ai-ml/**: Materi tentang kecerdasan buatan dan machine learning dari matematika dasar hingga implementasi
+  - *Status: ✏️ In Progress* | *Progress: 25%*
+  - Subfolder: 01-Notes (Aljabar Linear, Kalkulus, Peluang), 02-Projects, 03-Machine-Learning, 04-Deep-Learning, 05-Computer-Vision, 06-NLP
 - **blockchain/**: Belajar blockchain, kriptografi, smart contracts, dan cryptocurrency
-- **cyber-sec/**: Konsep keamanan siber, network security, ethical hacking, dan incident response  
+  - *Status: 📚 Not Started* | *Progress: 5%*
+  - Subfolder: 01-pengantar-blockchain, 02-kriptografi-dasar, 03-smart-contracts, 04-cryptocurrency, 05-decentralized-applications
+- **cyber-sec/**: Konsep keamanan siber, network security, ethical hacking, dan incident response
+  - *Status: 📚 Not Started* | *Progress: 5%*
+  - Subfolder: 01-pengantar-cyber-security, 02-jaringan-aman, 03-kriptografi, 04-ethical-hacking, 05-incident-response
 - **pemrograman/**: Konsep dasar pemrograman, bahasa, algoritma, dan paradigma
+  - *Status: 📚 In Progress* | *Progress: 30%*
+  - Subfolder: 01-pengantar-pemrograman, 02-bahasa-pemrograman-dasar, 03-konsep-pemrograman, 04-algoritma-dan-struktur-data, 05-paradigma-pemrograman
 - **web-dev/**: Pengembangan web dari HTML/CSS hingga framework modern
+  - *Status: 📚 In Progress* | *Progress: 10%*
+  - Subfolder: 01-html-css, 02-javascript, 03-backend, 04-frontend-frameworks, 05-backend-frameworks, 06-golang
 
 ## Progress Tracker
 
 | Domain / Subject | Status | Progress | Keterangan / Notes |
 |------------------|--------|----------|-------------------|
-| Pemrograman Dasar / Basic Programming | ✏️ | 40% | Pengantar, bahasa, konsep dasar |
-| AI/ML | 📚 | 25% | Matematika dasar, supervised learning |
-| Web Development | 📚 | 20% | HTML, CSS, JavaScript dasar |
-| Cyber Security | 📚 | 10% | Pengantar dan konsep dasar |
+| AI/ML | ✏️ | 25% | Matematika dasar, supervised learning, deep learning basics |
+| Pemrograman | 📚 | 30% | Pengantar, bahasa, algoritma dan struktur data |
+| Web Development | 📚 | 10% | HTML, CSS basics |
+| Cyber Security | 📚 | 5% | Pengantar dan konsep dasar |
 | Blockchain | 📚 | 5% | Pengantar dan kriptografi dasar |
 
 > Keterangan / Legend: 📚 Belum (Not Started) | ✏️ Sedang (In Progress) | ✅ Selesai (Completed)
@@ -113,6 +123,32 @@ Meskipun ini adalah proyek pembelajaran pribadiku, kontribusi tetap dipersilakan
 - Sumber belajar tambahan
 - Kode yang lebih efisien atau bersih
 
+## 📁 Struktur Subfolder Lengkap
+
+### ai-ml/
+- 01 - Notes: Aljabar Linear, Kalkulus, Peluang
+- 02 - Projects: Proyek-proyek pembelajaran
+- 03 - Machine Learning: Supervised & Unsupervised Learning
+- 04 - Deep Learning: Neural Networks, CNN, RNN, Transformers
+- 05 - Computer Vision: Pengolahan citra dan visi komputer
+- 06 - NLP: Pemrosesan bahasa alami
+
+### pemrograman/
+- 01 - pengantar-pemrograman
+- 02 - bahasa-pemrograman-dasar: JavaScript, Python
+- 03 - konsep-pemrograman
+- 04 - algoritma-dan-struktur-data:
+  - algoritma: Pengantar, Analisis Kompleksitas, Struktur Data, DLL
+- 05 - paradigma-pemrograman
+
+### web-dev/
+- 01 - html-css
+- 02 - javascript
+- 03 - backend: Laravel
+- 04 - frontend-frameworks: Next.js
+- 05 - backend-frameworks
+- 06 - golang
+
 ## Lisensi / License
 
 Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
@@ -120,7 +156,7 @@ Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/M
 ```
 MIT License
 
-Copyright (c) 2025 Belajar-Programming
+Copyright (c) 2025 rafsamjani
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

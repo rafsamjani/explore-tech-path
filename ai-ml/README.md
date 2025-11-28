@@ -1,8 +1,8 @@
 # AI-ML Learning Journey
 
 [![Progress](https://img.shields.io/badge/Progress-25%25-brightgreen)](https://shields.io/)
-[![GitHub stars](https://img.shields.io/github/stars/Belajar-Programming/Belajar-Programming.svg)](https://github.com/Belajar-Programming/Belajar-Programming/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Belajar-Programming/Belajar-Programming.svg)](https://github.com/Belajar-Programming/Belajar-Programming/network)
+[![GitHub stars](https://img.shields.io/github/stars/rafsamjani/explore-tech-path.svg)](https://github.com/rafsamjani/explore-tech-path/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/rafsamjani/explore-tech-path.svg)](https://github.com/rafsamjani/explore-tech-path/network)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Belajar AI/ML dari dasar matematika sampai proyek real-world** / *Learning AI/ML from mathematical foundations to real-world projects*
@@ -152,8 +152,8 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 
 1. **Clone repository** / Clone the repository:
    ```bash
-   git clone https://github.com/Belajar-Programming/Belajar-Programming.git
-   cd Belajar-Programming/ai-ml
+   git clone https://github.com/rafsamjani/explore-tech-path.git
+   cd explore-tech-path/ai-ml
    ```
 
 2. **Install dependencies** / Instal dependensi:
@@ -237,7 +237,7 @@ Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/M
 ```
 MIT License
 
-Copyright (c) 2025 Belajar-Programming
+Copyright (c) 2025 rafsamjani
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

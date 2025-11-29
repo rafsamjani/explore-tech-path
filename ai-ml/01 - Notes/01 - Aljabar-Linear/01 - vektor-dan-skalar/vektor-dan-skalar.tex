@@ -1,0 +1,441 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\geometry{a4paper, margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Aljabar Linear - Vektor dan Skalar}
+\lfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Define colors for listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Aljabar Linear: Vektor dan Skalar}
+\author{Catatan AI/ML}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Pendahuluan}
+
+Aljabar linear adalah cabang matematika yang sangat penting dalam ilmu komputer, khususnya dalam bidang Machine Learning dan Artificial Intelligence. Konsep dasar seperti vektor dan skalar merupakan fondasi utama yang harus dipahami sebelum melangkah ke konsep-konsep yang lebih kompleks seperti matriks, ruang vektor, dan transformasi linear.
+
+Dokumen ini akan membahas secara mendalam tentang vektor dan skalar, disertai dengan contoh dan latihan untuk memperkuat pemahaman.
+
+\section{Pengertian Dasar}
+
+\subsection{Skalar}
+
+Skalar adalah besaran yang hanya memiliki \textbf{nilai} atau \textbf{magnitude} saja, tanpa arah. Skalar merupakan bilangan tunggal yang digunakan untuk merepresentasikan kuantitas tertentu seperti panjang, waktu, suhu, atau massa.
+
+\textbf{Contoh skalar:}
+\begin{itemize}
+    \item Suhu ruangan: 25°C
+    \item Tinggi badan: 175 cm
+    \item Waktu perjalanan: 2 jam
+    \item Berat benda: 50 kg
+\end{itemize}
+
+Dalam konteks aljabar linear dan komputasi, skalar biasanya direpresentasikan sebagai bilangan tunggal:
+
+\[ s \in \mathbb{R} \]
+
+di mana $\mathbb{R}$ adalah himpunan bilangan real.
+
+\subsection{Vektor}
+
+Vektor adalah besaran yang memiliki \textbf{nilai} (magnitude) dan \textbf{arah}. Vektor sangat penting dalam ilmu komputer dan Machine Learning karena digunakan untuk merepresentasikan data, fitur, dan parameter model.
+
+\textbf{Contoh vektor:}
+\begin{itemize}
+    \item Kecepatan mobil: 60 km/jam ke arah timur
+    \item Koordinat dalam ruang: $(3, 4)$ atau $(1, 2, 5)$
+    \item Fitur gambar dalam Machine Learning
+    \item Parameter dalam model regresi
+\end{itemize}
+
+\subsubsection{Representasi Vektor}
+
+Secara matematis, vektor biasanya ditulis dalam bentuk kolom:
+
+\[ \vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \]
+
+atau dalam bentuk baris:
+
+\[ \vec{v} = \begin{bmatrix} v_1 & v_2 & \cdots & v_n \end{bmatrix} \]
+
+Kita juga sering melambangkan vektor dengan huruf kecil tebal:
+
+\[ \mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \]
+
+\textbf{Contoh vektor 2D:}
+\[ \mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix} \]
+
+\textbf{Contoh vektor 3D:}
+\[ \mathbf{w} = \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \]
+
+\section{Operasi pada Vektor dan Skalar}
+
+\subsection{Penjumlahan dan Pengurangan}
+
+\subsubsection{Operasi antara Vektor dan Skalar}
+
+Kita dapat menambahkan atau mengurangkan skalar ke setiap elemen vektor. Misalnya, jika:
+
+\[ \mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \]
+
+dan $s$ adalah skalar, maka:
+
+\[ \mathbf{v} + s = \begin{bmatrix} v_1 + s \\ v_2 + s \\ \vdots \\ v_n + s \end{bmatrix} \]
+\[ \mathbf{v} - s = \begin{bmatrix} v_1 - s \\ v_2 - s \\ \vdots \\ v_n - s \end{bmatrix} \]
+
+\textbf{Contoh:}
+\[ \mathbf{v} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad s = 5 \]
+\[ \mathbf{v} + s = \begin{bmatrix} 1 + 5 \\ 2 + 5 \\ 3 + 5 \end{bmatrix} = \begin{bmatrix} 6 \\ 7 \\ 8 \end{bmatrix} \]
+
+\subsubsection{Operasi antara Dua Vektor}
+
+Dua vektor dengan dimensi yang sama dapat dijumlahkan atau dikurangkan secara elemen per elemen:
+
+\[ \mathbf{u} = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \]
+
+\[ \mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix} \]
+\[ \mathbf{u} - \mathbf{v} = \begin{bmatrix} u_1 - v_1 \\ u_2 - v_2 \\ \vdots \\ u_n - v_n \end{bmatrix} \]
+
+\textbf{Contoh:}
+\[ \mathbf{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix} \]
+\[ \mathbf{u} + \mathbf{v} = \begin{bmatrix} 1 + 4 \\ 2 + 5 \\ 3 + 6 \end{bmatrix} = \begin{bmatrix} 5 \\ 7 \\ 9 \end{bmatrix} \]
+
+\subsection{Perkalian}
+
+\subsubsection{Perkalian Skalar dengan Vektor}
+
+Ketika kita mengalikan sebuah vektor dengan skalar, kita mengalikan setiap elemen vektor dengan skalar tersebut:
+
+\[ s \cdot \mathbf{v} = s \cdot \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} = \begin{bmatrix} s \cdot v_1 \\ s \cdot v_2 \\ \vdots \\ s \cdot v_n \end{bmatrix} \]
+
+\textbf{Contoh:}
+\[ \mathbf{v} = \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix}, \quad s = 4 \]
+\[ s \cdot \mathbf{v} = 4 \cdot \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix} = \begin{bmatrix} 8 \\ 12 \\ 4 \end{bmatrix} \]
+
+\subsubsection{Perkalian Dua Vektor}
+
+Ada beberapa jenis perkalian antara dua vektor. Dua yang paling umum adalah:
+
+\begin{enumerate}
+    \item \textbf{Dot Product (Perkalian Titik)}: Menghasilkan skalar
+    \item \textbf{Cross Product (Perkalian Silang)}: Menghasilkan vektor (hanya dalam 3 dimensi)
+\end{enumerate}
+
+\paragraph{Dot Product}
+
+Dot product dari dua vektor dengan dimensi yang sama didefinisikan sebagai:
+
+\[ \mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i \cdot v_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n \]
+
+\textbf{Contoh:}
+\[ \mathbf{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix} \]
+\[ \mathbf{u} \cdot \mathbf{v} = (1 \cdot 4) + (2 \cdot 5) + (3 \cdot 6) = 4 + 10 + 18 = 32 \]
+
+\paragraph{Cross Product (hanya 3 dimensi)}
+
+Cross product dari dua vektor 3 dimensi didefinisikan sebagai:
+
+\[ \mathbf{u} \times \mathbf{v} = \begin{bmatrix} u_2v_3 - u_3v_2 \\ u_3v_1 - u_1v_3 \\ u_1v_2 - u_2v_1 \end{bmatrix} \]
+
+\textbf{Contoh:}
+\[ \mathbf{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix} \]
+\[ \mathbf{u} \times \mathbf{v} = \begin{bmatrix} (2 \cdot 6) - (3 \cdot 5) \\ (3 \cdot 4) - (1 \cdot 6) \\ (1 \cdot 5) - (2 \cdot 4) \end{bmatrix} = \begin{bmatrix} 12 - 15 \\ 12 - 6 \\ 5 - 8 \end{bmatrix} = \begin{bmatrix} -3 \\ 6 \\ -3 \end{bmatrix} \]
+
+\section{Norma Vektor}
+
+Norma (atau magnitude) dari sebuah vektor menggambarkan panjang atau ukuran vektor tersebut. Ada beberapa jenis norma, dengan norma paling umum adalah:
+
+\subsection{Norma-2 (Euclidean Norm)}
+
+Didefinisikan sebagai:
+
+\[ ||\mathbf{v}||_2 = \sqrt{\sum_{i=1}^{n} v_i^2} = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2} \]
+
+\textbf{Contoh:}
+\[ \mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix} \]
+\[ ||\mathbf{v}||_2 = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5 \]
+
+\subsection{Norma-1}
+
+Didefinisikan sebagai:
+
+\[ ||\mathbf{v}||_1 = \sum_{i=1}^{n} |v_i| \]
+
+\textbf{Contoh:}
+\[ \mathbf{v} = \begin{bmatrix} -3 \\ 4 \\ -1 \end{bmatrix} \]
+\[ ||\mathbf{v}||_1 = |-3| + |4| + |-1| = 3 + 4 + 1 = 8 \]
+
+\subsection{Norma Tak Hingga (Max Norm)}
+
+Didefinisikan sebagai:
+
+\[ ||\mathbf{v}||_\infty = \max(|v_1|, |v_2|, \ldots, |v_n|) \]
+
+\textbf{Contoh:}
+\[ \mathbf{v} = \begin{bmatrix} -3 \\ 4 \\ -1 \end{bmatrix} \]
+\[ ||\mathbf{v}||_\infty = \max(|-3|, |4|, |-1|) = \max(3, 4, 1) = 4 \]
+
+\section{Aplikasi dalam Machine Learning}
+
+\subsection{Representasi Data}
+
+Dalam Machine Learning, data sering direpresentasikan sebagai vektor. Misalnya, dalam kasus pengenalan gambar, setiap piksel dalam gambar dapat menjadi elemen dari vektor. Jika kita memiliki gambar 28x28 piksel, maka gambar tersebut dapat direpresentasikan sebagai vektor dengan 784 elemen.
+
+\textbf{Contoh:}
+Untuk klasifikasi email spam:
+\[ \mathbf{x} = \begin{bmatrix} 
+\text{jumlah\_kata\_'free'} \\
+\text{jumlah\_kata\_'buy'} \\
+\text{panjang\_email} \\
+\text{jumlah\_karakter\_kapital} \\
+\vdots
+\end{bmatrix} \]
+
+\subsection{Parameter Model}
+
+Parameter dalam model Machine Learning juga sering disimpan dalam bentuk vektor. Misalnya, dalam model regresi linear:
+
+\[ y = \mathbf{w}^T \mathbf{x} + b \]
+
+di mana $\mathbf{w}$ adalah vektor bobot (weights) dan $b$ adalah bias.
+
+\section{Implementasi Python}
+
+Berikut adalah contoh implementasi operasi vektor dan skalar menggunakan Python dan library NumPy:
+
+\begin{lstlisting}[language=Python, caption=Implementasi operasi vektor dan skalar di Python]
+import numpy as np
+
+# Membuat vektor
+v = np.array([1, 2, 3])
+u = np.array([4, 5, 6])
+s = 5
+
+# Operasi dasar
+penjumlahan = v + u  # [5, 7, 9]
+pengurangan = v - u  # [-3, -3, -3]
+perkalian_skalar = s * v  # [5, 10, 15]
+penambahan_skalar = v + s  # [6, 7, 8]
+
+# Dot product
+dot_product = np.dot(v, u)  # 32
+
+# Norma vektor
+norm_l2 = np.linalg.norm(v)  # 3.74 (akar dari 1^2 + 2^2 + 3^2)
+norm_l1 = np.linalg.norm(v, ord=1)  # 6 (|1| + |2| + |3|)
+\end{lstlisting}
+
+\section{Latihan}
+
+\subsection{Latihan Dasar}
+
+\textbf{Latihan 1:} Diberikan:
+\[ \mathbf{a} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} -3 \\ 2 \\ 1 \end{bmatrix} \]
+
+Hitung:
+\begin{enumerate}
+    \item $\mathbf{a} + \mathbf{b}$
+    \item $\mathbf{a} - \mathbf{b}$
+    \item $3\mathbf{a}$
+    \item $\mathbf{a} \cdot \mathbf{b}$
+\end{enumerate}
+
+\textbf{Jawaban:}
+\begin{enumerate}
+    \item $\mathbf{a} + \mathbf{b} = \begin{bmatrix} 2 + (-3) \\ (-1) + 2 \\ 4 + 1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \\ 5 \end{bmatrix}$
+    \item $\mathbf{a} - \mathbf{b} = \begin{bmatrix} 2 - (-3) \\ (-1) - 2 \\ 4 - 1 \end{bmatrix} = \begin{bmatrix} 5 \\ -3 \\ 3 \end{bmatrix}$
+    \item $3\mathbf{a} = 3 \cdot \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix} = \begin{bmatrix} 6 \\ -3 \\ 12 \end{bmatrix}$
+    \item $\mathbf{a} \cdot \mathbf{b} = (2)(-3) + (-1)(2) + (4)(1) = -6 -2 + 4 = -4$
+\end{enumerate}
+
+\textbf{Latihan 2:} Hitung norma-2 dari vektor berikut:
+\[ \mathbf{c} = \begin{bmatrix} 3 \\ 4 \\ 12 \end{bmatrix} \]
+
+\textbf{Jawaban:}
+\[ ||\mathbf{c}||_2 = \sqrt{3^2 + 4^2 + 12^2} = \sqrt{9 + 16 + 144} = \sqrt{169} = 13 \]
+
+\textbf{Latihan 3:} Diberikan vektor:
+\[ \mathbf{d} = \begin{bmatrix} -2 \\ 5 \\ -3 \end{bmatrix} \]
+
+Hitung norma-1 dan norma tak hingga dari vektor tersebut.
+
+\textbf{Jawaban:}
+\[ ||\mathbf{d}||_1 = |-2| + |5| + |-3| = 2 + 5 + 3 = 10 \]
+\[ ||\mathbf{d}||_\infty = \max(|-2|, |5|, |-3|) = \max(2, 5, 3) = 5 \]
+
+\subsection{Latihan Menengah}
+
+\textbf{Latihan 4:} Implementasikan fungsi Python untuk menghitung dot product dua vektor tanpa menggunakan library NumPy:
+
+\begin{lstlisting}[language=Python, caption=Fungsi dot product manual]
+def dot_product(v1, v2):
+    if len(v1) != len(v2):
+        raise ValueError("Vektor harus memiliki panjang yang sama")
+    
+    result = 0
+    for i in range(len(v1)):
+        result += v1[i] * v2[i]
+    return result
+
+# Contoh penggunaan
+v1 = [1, 2, 3]
+v2 = [4, 5, 6]
+print(dot_product(v1, v2))  # Output: 32
+\end{lstlisting}
+
+\textbf{Latihan 5:} Dua vektor dikatakan ortogonal jika dot product-nya adalah nol. Buat fungsi Python untuk mengecek apakah dua vektor ortogonal:
+
+\begin{lstlisting}[language=Python, caption=Pengecekan ortogonalitas vektor]
+def are_orthogonal(v1, v2, tolerance=1e-9):
+    dot_product_result = dot_product(v1, v2)
+    return abs(dot_product_result) < tolerance
+
+# Contoh: vektor [1, 0] dan [0, 1] adalah ortogonal
+v1 = [1, 0]
+v2 = [0, 1]
+print(are_orthogonal(v1, v2))  # Output: True
+\end{lstlisting}
+
+\textbf{Latihan 6:} Diberikan dua vektor dalam 3 dimensi:
+\[ \mathbf{u} = \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} -1 \\ 4 \\ 2 \end{bmatrix} \]
+
+Hitung cross product $\mathbf{u} \times \mathbf{v}$.
+
+\textbf{Jawaban:}
+\[ \mathbf{u} \times \mathbf{v} = \begin{bmatrix} (-1)(2) - (3)(4) \\ (3)(-1) - (2)(2) \\ (2)(4) - (-1)(-1) \end{bmatrix} \]
+\[ = \begin{bmatrix} -2 - 12 \\ -3 - 4 \\ 8 - 1 \end{bmatrix} = \begin{bmatrix} -14 \\ -7 \\ 7 \end{bmatrix} \]
+
+\subsection{Latihan Lanjutan}
+
+\textbf{Latihan 7:} Buat fungsi Python untuk menghitung sudut antara dua vektor menggunakan rumus:
+
+\[ \theta = \arccos\left(\frac{\mathbf{u} \cdot \mathbf{v}}{||\mathbf{u}||_2 \cdot ||\mathbf{v}||_2}\right) \]
+
+\begin{lstlisting}[language=Python, caption=Menghitung sudut antara dua vektor]
+import math
+
+def angle_between_vectors(v1, v2):
+    dot_prod = dot_product(v1, v2)
+    norm_v1 = math.sqrt(sum(x**2 for x in v1))
+    norm_v2 = math.sqrt(sum(x**2 for x in v2))
+    
+    cos_theta = dot_prod / (norm_v1 * norm_v2)
+    # Menghindari error karena floating point precision
+    cos_theta = max(-1, min(1, cos_theta))
+    
+    theta_radians = math.acos(cos_theta)
+    theta_degrees = math.degrees(theta_radians)
+    
+    return theta_radians, theta_degrees
+
+# Contoh penggunaan
+v1 = [1, 0]
+v2 = [0, 1]
+radians, degrees = angle_between_vectors(v1, v2)
+print(f"Sudut dalam radian: {radians:.4f}")
+print(f"Sudut dalam derajat: {degrees:.4f}")  # Output: 90 derajat
+\end{lstlisting}
+
+\textbf{Latihan 8:} Dalam Machine Learning, seringkali kita ingin menormalisasi vektor agar memiliki norma-2 sebesar 1. Implementasikan fungsi untuk normalisasi vektor:
+
+\begin{lstlisting}[language=Python, caption=Normalisasi vektor]
+def normalize_vector(v):
+    norm = math.sqrt(sum(x**2 for x in v))
+    if norm == 0:
+        raise ValueError("Tidak bisa menormalisasi vektor nol")
+    
+    return [x / norm for x in v]
+
+# Contoh penggunaan
+v = [3, 4]
+normalized_v = normalize_vector(v)
+print(normalized_v)  # Output: [0.6, 0.8]
+# Cek norma: sqrt(0.6^2 + 0.8^2) = sqrt(0.36 + 0.64) = sqrt(1) = 1
+\end{lstlisting}
+
+\textbf{Latihan 9:} Dalam konteks Machine Learning, kita sering menggunakan \textit{cosine similarity} untuk mengukur kesamaan antara dua vektor:
+\[ \text{cosine\_similarity} = \frac{\mathbf{u} \cdot \mathbf{v}}{||\mathbf{u}||_2 \cdot ||\mathbf{v}||_2} \]
+
+Implementasikan fungsi untuk menghitung cosine similarity.
+
+\begin{lstlisting}[language=Python, caption=Cosine similarity]
+def cosine_similarity(v1, v2):
+    dot_prod = dot_product(v1, v2)
+    norm_v1 = math.sqrt(sum(x**2 for x in v1))
+    norm_v2 = math.sqrt(sum(x**2 for x in v2))
+    
+    if norm_v1 == 0 or norm_v2 == 0:
+        return 0  # Jika salah satu vektor adalah vektor nol
+    
+    return dot_prod / (norm_v1 * norm_v2)
+
+# Contoh penggunaan
+v1 = [1, 2, 3]
+v2 = [4, 5, 6]
+sim = cosine_similarity(v1, v2)
+print(f"Cosine similarity: {sim:.4f}")
+\end{lstlisting}
+
+\section{Kesimpulan}
+
+Dalam dokumen ini kita telah membahas:
+\begin{itemize}
+    \item Definisi skalar dan vektor
+    \item Representasi matematis dari vektor
+    \item Operasi dasar pada vektor dan skalar (penjumlahan, pengurangan, perkalian)
+    \item Jenis-jenis norma vektor
+    \item Aplikasi vektor dalam Machine Learning
+    \item Implementasi Python untuk operasi vektor
+    \item Latihan-latihan untuk memperkuat pemahaman
+\end{itemize}
+
+Vektor dan skalar merupakan konsep dasar yang sangat penting dalam aljabar linear dan Machine Learning. Pemahaman yang kuat tentang konsep-konsep ini akan sangat membantu dalam memahami topik-topik yang lebih lanjut seperti matriks, transformasi linear, dan algoritma Machine Learning.
+
+\end{document}

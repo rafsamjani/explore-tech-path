@@ -8,7 +8,6 @@
 \usepackage{geometry}
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{tcolorbox}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 
@@ -19,25 +18,14 @@
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\small Aljabar Linear: Vektor dan Skalar}
-\lhead{\small Catatan Pembelajaran}
+\rhead{Aljabar Linear: Vektor dan Skalar}
+\lhead{Catatan Pembelajaran}
 \rfoot{Halaman \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
-% Setup for boxes to highlight definitions
-\newtcolorbox{definitionbox}[1][]{
-    colback=blue!5!white,
-    colframe=blue!75!black,
-    title=#1,
-    fonttitle=\bfseries
-}
-
-\newtcolorbox{examplebox}[1][]{
-    colback=green!5!white,
-    colframe=green!75!black,
-    title=#1,
-    fonttitle=\bfseries
-}
+% Simple definition and example environments using sections instead of tcolorbox
+\newcommand{\definition}[2]{\textbf{#1}\newline #2}
+\newcommand{\example}[2]{\textbf{#1}\newline #2}
 
 % Setup for code listings
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -90,9 +78,9 @@ Dokumen ini akan membahas secara mendalam tentang vektor dan skalar, disertai de
 \section{Pengertian Dasar}
 
 \subsection{Skalar}
-\begin{definitionbox}[Definisi Skalar]
+\definition{Definisi Skalar}{%
 Skalar adalah besaran yang hanya memiliki \textbf{nilai} atau \textbf{magnitude} saja, tanpa arah. Skalar merupakan bilangan tunggal yang digunakan untuk merepresentasikan kuantitas tertentu seperti panjang, waktu, suhu, atau massa.
-\end{definitionbox}
+}
 
 \subsubsection{Contoh Skalar}
 \begin{itemize}[noitemsep]
@@ -110,9 +98,9 @@ Dalam konteks aljabar linear dan komputasi, skalar biasanya direpresentasikan se
 di mana $\mathbb{R}$ adalah himpunan bilangan real.
 
 \subsection{Vektor}
-\begin{definitionbox}[Definisi Vektor]
+\definition{Definisi Vektor}{%
 Vektor adalah besaran yang memiliki \textbf{nilai} (magnitude) dan \textbf{arah}. Vektor sangat penting dalam ilmu komputer dan Machine Learning karena digunakan untuk merepresentasikan data, fitur, dan parameter model.
-\end{definitionbox}
+}
 
 \subsubsection{Contoh Vektor}
 \begin{itemize}[noitemsep]
@@ -152,7 +140,7 @@ Kita juga sering melambangkan vektor dengan huruf kecil tebal:
     \end{bmatrix}
 \end{equation}
 
-\begin{examplebox}[Contoh Vektor 2D dan 3D]
+\example{Contoh Vektor 2D dan 3D}{%
 \textbf{Contoh vektor 2D:}
 \begin{equation}
     \mathbf{v} = \begin{bmatrix}
@@ -169,7 +157,7 @@ Kita juga sering melambangkan vektor dengan huruf kecil tebal:
         5
     \end{bmatrix}
 \end{equation}
-\end{examplebox}
+}
 
 \section{Operasi pada Vektor dan Skalar}
 
@@ -203,7 +191,7 @@ dan $s$ adalah skalar, maka:
     \end{bmatrix}
 \end{align}
 
-\begin{examplebox}[Contoh Operasi Vektor dan Skalar]
+\example{Contoh Operasi Vektor dan Skalar}{%
 \begin{equation}
     \mathbf{v} = \begin{bmatrix}
         1 \\
@@ -223,13 +211,13 @@ dan $s$ adalah skalar, maka:
         8
     \end{bmatrix}
 \end{equation}
-\end{examplebox}
+}
 
 \subsubsection{Operasi antara Dua Vektor}
 
 Dua vektor dengan dimensi yang sama dapat dijumlahkan atau dikurangkan secara elemen per elemen:
 
-\begin{definitionbox}[Penjumlahan dan Pengurangan Vektor]
+\definition{Penjumlahan dan Pengurangan Vektor}{%
 Jika:
 \begin{equation}
     \mathbf{u} = \begin{bmatrix}
@@ -261,9 +249,9 @@ Maka:
         u_n - v_n
     \end{bmatrix}
 \end{align}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Operasi Dua Vektor]
+\example{Contoh Operasi Dua Vektor}{%
 \begin{equation}
     \mathbf{u} = \begin{bmatrix}
         1 \\
@@ -288,13 +276,13 @@ Maka:
         9
     \end{bmatrix}
 \end{equation}
-\end{examplebox}
+}
 
 \subsection{Perkalian}
 
 \subsubsection{Perkalian Skalar dengan Vektor}
 
-\begin{definitionbox}[Perkalian Skalar dengan Vektor]
+\definition{Perkalian Skalar dengan Vektor}{%
 Ketika kita mengalikan sebuah vektor dengan skalar, kita mengalikan setiap elemen vektor dengan skalar tersebut:
 \begin{equation}
     s \cdot \mathbf{v} = s \cdot \begin{bmatrix}
@@ -309,9 +297,9 @@ Ketika kita mengalikan sebuah vektor dengan skalar, kita mengalikan setiap eleme
         s \cdot v_n
     \end{bmatrix}
 \end{equation}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Perkalian Skalar dengan Vektor]
+\example{Contoh Perkalian Skalar dengan Vektor}{%
 \begin{equation}
     \mathbf{v} = \begin{bmatrix}
         2 \\
@@ -331,7 +319,7 @@ Ketika kita mengalikan sebuah vektor dengan skalar, kita mengalikan setiap eleme
         4
     \end{bmatrix}
 \end{equation}
-\end{examplebox}
+}
 
 \subsubsection{Perkalian Dua Vektor}
 
@@ -344,14 +332,14 @@ Ada beberapa jenis perkalian antara dua vektor. Dua yang paling umum adalah:
 
 \paragraph{Dot Product}
 
-\begin{definitionbox}[Dot Product]
+\definition{Dot Product}{%
 Dot product dari dua vektor dengan dimensi yang sama didefinisikan sebagai:
 \begin{equation}
     \mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i \cdot v_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n
 \end{equation}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Dot Product]
+\example{Contoh Dot Product}{%
 \begin{equation}
     \mathbf{u} = \begin{bmatrix}
         1 \\
@@ -368,11 +356,11 @@ Dot product dari dua vektor dengan dimensi yang sama didefinisikan sebagai:
 \begin{equation}
     \mathbf{u} \cdot \mathbf{v} = (1 \cdot 4) + (2 \cdot 5) + (3 \cdot 6) = 4 + 10 + 18 = 32
 \end{equation}
-\end{examplebox}
+}
 
 \paragraph{Cross Product (hanya 3 dimensi)}
 
-\begin{definitionbox}[Cross Product (3D)]
+\definition{Cross Product (3D)}{%
 Cross product dari dua vektor 3 dimensi didefinisikan sebagai:
 
 \begin{equation}
@@ -382,9 +370,9 @@ Cross product dari dua vektor 3 dimensi didefinisikan sebagai:
         u_1v_2 - u_2v_1
     \end{bmatrix}
 \end{equation}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Cross Product]
+\example{Contoh Cross Product}{%
 \begin{equation}
     \mathbf{u} = \begin{bmatrix}
         1 \\
@@ -409,24 +397,24 @@ Cross product dari dua vektor 3 dimensi didefinisikan sebagai:
         -3
     \end{bmatrix}
 \end{equation}
-\end{examplebox}
+}
 
 \section{Norma Vektor}
 
-\begin{definitionbox}[Definisi Norma Vektor]
+\definition{Definisi Norma Vektor}{%
 Norma (atau magnitude) dari sebuah vektor menggambarkan panjang atau ukuran vektor tersebut. Ada beberapa jenis norma, dengan norma paling umum adalah:
-\end{definitionbox}
+}
 
 \subsection{Norma-2 (Euclidean Norm)}
 
-\begin{definitionbox}[Norma-2 (Euclidean)]
+\definition{Norma-2 (Euclidean)}{%
 Didefinisikan sebagai:
 \begin{equation}
     \|\mathbf{v}\|_2 = \sqrt{\sum_{i=1}^{n} v_i^2} = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}
 \end{equation}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Norma-2]
+\example{Contoh Norma-2}{%
 \begin{equation}
     \mathbf{v} = \begin{bmatrix}
         3 \\
@@ -437,18 +425,18 @@ Didefinisikan sebagai:
 \begin{equation}
     \|\mathbf{v}\|_2 = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
 \end{equation}
-\end{examplebox}
+}
 
 \subsection{Norma-1}
 
-\begin{definitionbox}[Norma-1]
+\definition{Norma-1}{%
 Didefinisikan sebagai:
 \begin{equation}
     \|\mathbf{v}\|_1 = \sum_{i=1}^{n} |v_i|
 \end{equation}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Norma-1]
+\example{Contoh Norma-1}{%
 \begin{equation}
     \mathbf{v} = \begin{bmatrix}
         -3 \\
@@ -460,18 +448,18 @@ Didefinisikan sebagai:
 \begin{equation}
     \|\mathbf{v}\|_1 = |-3| + |4| + |-1| = 3 + 4 + 1 = 8
 \end{equation}
-\end{examplebox}
+}
 
 \subsection{Norma Tak Hingga (Max Norm)}
 
-\begin{definitionbox}[Norma Tak Hingga]
+\definition{Norma Tak Hingga}{%
 Didefinisikan sebagai:
 \begin{equation}
     \|\mathbf{v}\|_\infty = \max(|v_1|, |v_2|, \ldots, |v_n|)
 \end{equation}
-\end{definitionbox}
+}
 
-\begin{examplebox}[Contoh Norma Tak Hingga]
+\example{Contoh Norma Tak Hingga}{%
 \begin{equation}
     \mathbf{v} = \begin{bmatrix}
         -3 \\
@@ -483,7 +471,7 @@ Didefinisikan sebagai:
 \begin{equation}
     \|\mathbf{v}\|_\infty = \max(|-3|, |4|, |-1|) = \max(3, 4, 1) = 4
 \end{equation}
-\end{examplebox}
+}
 
 \section{Aplikasi dalam Machine Learning}
 
@@ -491,7 +479,7 @@ Didefinisikan sebagai:
 
 Dalam Machine Learning, data sering direpresentasikan sebagai vektor. Misalnya, dalam kasus pengenalan gambar, setiap piksel dalam gambar dapat menjadi elemen dari vektor. Jika kita memiliki gambar $28 \times 28$ piksel, maka gambar tersebut dapat direpresentasikan sebagai vektor dengan 784 elemen.
 
-\begin{examplebox}[Contoh Representasi Data]
+\example{Contoh Representasi Data}{%
 Untuk klasifikasi email spam:
 \begin{equation}
     \mathbf{x} = \begin{bmatrix}
@@ -502,7 +490,7 @@ Untuk klasifikasi email spam:
         \vdots
     \end{bmatrix}
 \end{equation}
-\end{examplebox}
+}
 
 \subsection{Parameter Model}
 
@@ -540,7 +528,7 @@ norm_l1 = np.linalg.norm(v, ord=1)  # 6 (|1| + |2| + |3|)
 
 \section{Sifat-Sifat Operasi Vektor}
 
-\begin{definitionbox}{Sifat-Sifat Operasi Vektor}
+\definition{Sifat-Sifat Operasi Vektor}{%
 Operasi vektor memiliki beberapa sifat penting:
 
 \textbf{Sifat komutatif penjumlahan:} $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$
@@ -554,7 +542,7 @@ Operasi vektor memiliki beberapa sifat penting:
 \textbf{Sifat distributif terhadap perkalian skalar:} $c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$
 
 \textbf{Sifat komutatif dot product:} $\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u}$
-\end{definitionbox}
+}
 
 \section{Latihan}
 
